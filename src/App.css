@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.head_wrap {
+  height: 200vh;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img_ipad {
+  position: absolute;
+  width: auto;
+  height: calc(29rem * var(--p,1));
+  z-index: -1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content_ipad {
+  background-color: transparent;
+  color: wheat;
+  color: #2bc0f9;
+  font-size: 4rem;
+}
+.wrap {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  height: 29rem;
+  align-items: center;
 }
