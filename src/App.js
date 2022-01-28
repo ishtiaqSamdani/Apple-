@@ -1,17 +1,24 @@
 import logo from "./logo.svg";
 import ipad from "./ipadpro.jpg";
-import { useState} from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(1);
-  let position=1;
+  const [yAxis, setyAxis] = useState(0);
+  const [imgSize, setimgSize] = useState(1);
+  const [var3, setvar3] = useState(1);
+  let position = 1;
   const handleScroll = () => {
-   position = window.pageYOffset;
-   if(position/100>=1){
-     setScrollPosition(position/100);
-   }
+    position = window.pageYOffset;
+    if (Math.abs(position / 100)>= 1) {
+      setvar3(var3*1.6);
+      setScrollPosition(position / 100);
+      setyAxis(position / 100 - 1);
+      setimgSize(100/position+var3);
+    }
+    console.log(position);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -24,11 +31,19 @@ function App() {
     <>
       <div className="head_wrap">
         <div className="wrap">
-          <img className="img_ipad" style={{"--p":`${scrollPosition.toString()}`}}  src={ipad} alt="" />
-          <p className="content_ipad">I am Iron Man</p>
+          <img
+            className="img_ipad"
+            style={{
+              "--p": `${scrollPosition.toString()}`,
+              "--v": `${yAxis.toString()}`,
+            }}
+            src={ipad}
+            alt=""
+          />
+          <p className="content_ipad" style={{"--img-size":`${imgSize.toString()}`}}>I am Iron Man</p>
         </div>
       </div>
-      <div>
+      <div style={{"color":"white"}}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eveniet
         aliquid ut. Temporibus placeat autem tenetur doloribus explicabo,
         tempore delectus minus odit ad? Dolores, voluptatum quam ratione
