@@ -11,6 +11,7 @@ body {
 .head_wrap {
   height: 125vh;
   position: relative;
+  overflow: hidden;
 }
 .img_ipad {
   margin: 2rem 0 0 0;
@@ -24,23 +25,10 @@ body {
 }
 .content_ipad {
   background-color: transparent;
-  color: transparent;
-  font-size: calc(3rem * var(--img-size, 1));
+  color: white;
+  font-size: calc(3rem * var(--img-size, 1.947));
   font-weight: 900;
-  background-image: #ffb399;
-  background-image: radial-gradient(
-      at 49% 89%,
-      hsla(308, 83%, 72%, 1) 0,
-      transparent 49%
-    ),
-    radial-gradient(at 69% 19%, hsla(279, 84%, 69%, 1) 0, transparent 43%),
-    radial-gradient(at 17% 78%, hsla(257, 88%, 72%, 1) 0, transparent 59%),
-    radial-gradient(at 26% 62%, hsla(161, 74%, 63%, 1) 0, transparent 50%),
-    radial-gradient(at 84% 53%, hsla(33, 85%, 75%, 1) 0, transparent 49%),
-    radial-gradient(at 34% 61%, hsla(192, 85%, 68%, 1) 0, transparent 45%),
-    radial-gradient(at 24% 61%, hsla(5, 67%, 65%, 1) 0, transparent 43%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  text-shadow: 0 1px 2px red;
 }
 .wrap {
   position: -webkit-sticky;
@@ -50,4 +38,19 @@ body {
   justify-content: center;
   height: 29rem;
   align-items: center;
+  flex-direction: column;
+}
+.content_of_iron_man{
+  color: white!important;;
+  padding:1rem 2rem;
+  
+}
+.content_para{
+  color:white;
+  background-color: transparent;
+  font-size: 3rem;
+  font-weight: 500;
+  background-image:linear-gradient(145deg,red,yellow);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
